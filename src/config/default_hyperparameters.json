@@ -1,0 +1,5 @@
+{
+  "encode_to_decode_ratio": 4,
+  "activation": "tanh",
+  "use_exogenous": true
+}
