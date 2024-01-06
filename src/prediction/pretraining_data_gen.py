@@ -290,7 +290,7 @@ def generate_seasonality_for_frequency(
         return hourly_factors
     else:
         # Default case, no seasonality
-        return np.ones(len_series)
+        return np.random.random(len_series)
 
 
 def get_pretraining_data(
