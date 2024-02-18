@@ -96,7 +96,6 @@ def run_batch_predictions(
 
     try:
         logger.info("Making batch predictions...")
-        start = time.time()
 
         logger.info("Loading schema...")
         data_schema = load_saved_schema(saved_schema_dir_path)
@@ -163,12 +162,6 @@ def run_batch_predictions(
         logger.info("Saving predictions dataframe...")
         save_dataframe_as_csv(
             dataframe=validated_predictions, file_path=predictions_file_path
-        )
-
-        end = time.time()
-        elapsed_time = end - start
-        logger.info(
-            "Batch predictions completed " f"in {round(elapsed_time/60., 3)} minutes"
         )
 
     except Exception as exc:

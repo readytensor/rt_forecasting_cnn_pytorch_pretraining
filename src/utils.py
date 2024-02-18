@@ -1,7 +1,6 @@
 import json
 import os
 import random
-import torch
 import time
 import tracemalloc
 from typing import Any, Dict, List, Tuple, Union
@@ -287,11 +286,11 @@ def get_peak_memory_usage() -> Union[float, None]:
     """
     Returns the peak memory usage by current cuda device if available
     """
-    if not torch.cuda.is_available():
+    if not T.cuda.is_available():
         return None
 
-    current_device = torch.cuda.current_device()
-    peak_memory = torch.cuda.max_memory_allocated(current_device)
+    current_device = T.cuda.current_device()
+    peak_memory = T.cuda.max_memory_allocated(current_device)
     return peak_memory / 1e6
 
 
